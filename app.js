@@ -1,5 +1,5 @@
 let express = require('express');
-let bodyParser = require('body-parser')
+let bodyParser = require('body-parser');
 
 let indexRouters = require('./routes/index');
 let api = require('./routes/api');
