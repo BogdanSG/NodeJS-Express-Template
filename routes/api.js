@@ -1,7 +1,8 @@
-let routes = [];
+const express = require('express');
+const router = express.Router();
 
-routes['/api'] = function(req, res) {
+router.get('/', (req, res) => {
     res.send('api');
-};
+});
 
-module.exports = routes;
+module.exports = router;
