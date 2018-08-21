@@ -1,11 +1,10 @@
-let routes = [];
+const express = require('express');
+const router = express.Router();
 
-routes['/'] = function(req, res) {
-    res.sendFile('/views/index.html', {root: './' });
-};
+router.get('/', (req, res) => {
 
-routes['404'] = function(req, res) {
-    res.sendFile('/views/404.html', {root: './' });
-};
+    res.render('index');
 
-module.exports = routes;
+});
+
+module.exports = router;

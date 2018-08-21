@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
-let app = require('../app');
+const app = require('../app');
 // let debug = require('debug')('express:server');
-let http = require('http');
+const http = require('http');
 
-let port = process.env.PORT || '3000';
+const port = process.env.PORT || '3000';
 
 app.set('port', port);
 
-let server = http.createServer(app);
+const server = http.createServer(app);
 
 server.listen(port);
 

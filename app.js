@@ -1,12 +1,15 @@
-let express = require('express');
-let bodyParser = require('body-parser');
+const express = require('express');
+const bodyParser = require('body-parser');
 
-let indexRouters = require('./routes/index');
-let api = require('./routes/api');
+const indexRouter = require('./routes/index');
+const apiRouter = require('./routes/api');
 
 const app = express();
 
 //==============================Settings==============================//
+
+app.set('views', './views/pug');
+app.set('view engine', 'pug');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -15,11 +18,20 @@ app.use(express.static('./public'));
 
 //==============================Routers==============================//
 
-app.get('/', indexRouters['/']);
+//Multi Page
 
-app.use('/api', api);
+app.use('/', indexRouter);
 
-// 404
-app.get('*', indexRouters['404']);
+//Single Page
+
+//app.use('*', indexRouter);
+
+app.use('/api', apiRouter);
+
+app.use(function (req, res) {
+
+    res.render('404');
+
+});
 
 module.exports = app;
