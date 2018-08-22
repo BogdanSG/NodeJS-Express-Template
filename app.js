@@ -8,8 +8,11 @@ const app = express();
 
 //==============================Settings==============================//
 
-app.set('views', './views/pug');
-app.set('view engine', 'pug');
+// app.set('views', './views/pug');
+// app.set('view engine', 'pug');
+
+app.set('views', './views/hbs');
+app.set('view engine', 'hbs');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
