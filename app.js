@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const indexRouter = require('./routes/index');
-const apiRouter = require('./routes/api');
+const indexRouter = require('./routes/index/index');
+const apiRouter = require('./routes/api/api');
 
 const app = express();
 
